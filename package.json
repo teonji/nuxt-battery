@@ -8,7 +8,7 @@
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     },
-    "./composable": "./dist/composables/useBattery.mjs"
+    "./composables": "./dist/runtime/composables/useBattery.mjs"
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
