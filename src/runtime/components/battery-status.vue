@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useBattery } from '../runtime/composables/useBattery'
+import { useBattery } from '../composables/useBattery'
 const { status, charging, label } = useBattery()
 
 const props = defineProps({
