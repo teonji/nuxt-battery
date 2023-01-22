@@ -85,7 +85,8 @@ const style = computed(() => {
       :class="{ dark }"
     >
       <span v-if="showPercentage">{{ status }}% - </span>
-      <span>{{ label }}</span>
+      <span v-if="!charging">{{ label }}</span>
+      <span v-else>On charging</span>
     </span>
   </div>
 </template>
