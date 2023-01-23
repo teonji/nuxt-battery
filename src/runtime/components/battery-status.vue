@@ -95,8 +95,10 @@ const style = computed(() => {
 .battery-wrapper {
   display: flex;
   align-items: center;
+  font-family: sans-serif;
 }
 .battery {
+  box-sizing: initial;
   border: 3px solid v-bind(color);
   width: 18px;
   height: 30px;
@@ -137,7 +139,6 @@ const style = computed(() => {
   text-align: center;
   position: absolute;
   z-index: 5;
-  font-family: sans-serif;
   font-size: 11px;
   font-weight: bold;
   margin-top: 8px;
