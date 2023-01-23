@@ -1,6 +1,10 @@
 # Nuxt Battery module
 
-[![nuxt-battery](./docs/public/preview.png)](https://nuxtjs.org)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
+
+[![nuxt-battery](https://nuxt-battery.vercel.app/preview.png)](https://nuxt-battery.vercel.app)
 
 - [📖 &nbsp;Read the documentation](https://nuxt-battery.vercel.app)
 
@@ -26,8 +30,6 @@ export default {
   modules: ['nuxt-battery'],
 }
 ```
-
-## Usage
 
 # Usage
 
@@ -95,11 +97,11 @@ If you don't need to develop your own custom component, you can simply use this 
 [MIT License](./LICENSE)
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/strapi/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-version-href]: https://npmjs.com/package/@nuxtjs/strapi
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-battery/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://www.npmjs.com/package/nuxt-battery
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/strapi.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/strapi
+[npm-downloads-src]: https://img.shields.io/npm/dt/nuxt-battery.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://www.npmjs.com/package/nuxt-battery
 
-[license-src]: https://img.shields.io/npm/l/@nuxtjs/strapi.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/@nuxtjs/strapi
+[license-src]: https://img.shields.io/npm/l/nuxt-battery.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://www.npmjs.com/package/nuxt-battery
