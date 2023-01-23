@@ -3,28 +3,39 @@ import { computed } from 'vue'
 import { useBattery } from '../composables/useBattery'
 const { status, charging, label } = useBattery()
 
-const props = defineProps({
-  showLabel: {
-    type: Boolean,
-    default: false
-  },
-  showPercentage: {
-    type: Boolean,
-    default: false
-  },
-  dark: {
-    type: Boolean,
-    default: false
-  },
-  colored: {
-    type: Boolean,
-    default: true
-  }
+export interface Props {
+  showLabel?: boolean
+  showPercentage?: boolean
+  dark?: boolean
+  colored?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  /**
+   * If you need the remaining time label close to the battery icon
+   * @type {boolean}
+   */
+  showLabel: false,
+  /**
+   * If you need to show percentage in battery icon (and label)
+   * @type {boolean}
+   */
+  showPercentage: false,
+  /**
+   * Default battery icn border is white, choose dark if you need black
+   * @type {boolean}
+   */
+  dark: false,
+  /**
+   * If you need to show green, yellow and red color in battery icon
+   * @type {boolean}
+   */
+  colored: true
 })
 
-const color = computed(() => props.dark ? 'white' : 'black')
+const color = computed<string>(() => props.dark ? 'white' : 'black')
 
-const style = computed(() => {
+const style = computed<string>(() => {
   const dark = props.dark ? 'dark' : ''
   let color = ''
   if (status.value > 0) {

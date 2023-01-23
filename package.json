@@ -1,6 +1,6 @@
 {
   "name": "nuxt-battery",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -8,7 +8,10 @@
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     },
-    "./composables": "./dist/runtime/composables/useBattery.mjs"
+    "./composables": {
+      "default": "./dist/runtime/composables/useBattery.mjs",
+      "types": "./dist/runtime/composables/useBattery.d.ts"
+    }
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",

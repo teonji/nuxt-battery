@@ -8,7 +8,7 @@
         Is under charging: {{ charging }}
       </p>
       <p>
-        Remaining time: {{ label }}
+        Remaining time ({{ time }}): {{ label }}
       </p>
     </div>
     <div class="batteries">
@@ -42,7 +42,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useBattery } from '../src/runtime/composables/useBattery'
 const { status, charging, label, time } = useBattery()
 </script>
