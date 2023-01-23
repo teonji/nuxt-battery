@@ -1,12 +1,8 @@
 # Nuxt Battery module
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![License][license-src]][license-href]
-
 [![nuxt-battery](./docs/public/preview.png)](https://nuxtjs.org)
 
-- [📖 &nbsp;Read the documentation](https://strapi.nuxtjs.org)
+- [📖 &nbsp;Read the documentation](https://nuxt-battery.vercel.app)
 
 ## Features
 
