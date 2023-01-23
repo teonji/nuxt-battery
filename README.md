@@ -1,5 +1,7 @@
 # Nuxt Battery module
 
+A simple Nuxt 3 module to show info about your battery device. 
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
