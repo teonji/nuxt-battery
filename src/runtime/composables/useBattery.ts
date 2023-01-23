@@ -1,21 +1,23 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
-export interface UseBatteryData {
+interface UseBatteryType {
   status: string
   charging: boolean
   time: number
   label: string
 }
-/*
-* @return UseBatteryData
-* */
+/**
+ * useBattery composable
+ *
+ * @returns UseBatteryType
+ */
 export function useBattery () {
   let battery: any = null
 
-  const status = ref(-1)
-  const charging = ref(null)
-  const time = ref(-1)
-  const label = ref('')
+  const status = ref<number>(-1)
+  const charging = ref<boolean | null>(null)
+  const time = ref<number>(-1)
+  const label = ref<string>('')
 
   const timeConvert = (val: number) => {
     const hours = val / 60
