@@ -4,12 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "nuxi build",
+    "build": "cd .. && yarn install && cd docs && nuxi build",
     "generate": "nuxi generate",
     "preview": "nuxi preview"
-  },
-  "dependencies": {
-    "@nuxt/kit": "^3.0.0"
   },
   "devDependencies": {
     "nuxt": "^3.0.0",
