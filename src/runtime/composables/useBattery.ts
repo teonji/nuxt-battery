@@ -10,8 +10,8 @@ interface BatteryManager {
 }
 
 export interface useBatteryType {
-  status: string
-  charging: boolean
+  status: number
+  charging: boolean | null
   time: number
   label: string
 }
