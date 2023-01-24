@@ -46,29 +46,29 @@ export function useBattery () {
   /**
    * Update level info battery
    */
-  const updateLevelInfo = () => {
+  const updateLevel = () => {
     status.value = parseInt(String((battery?.level || 0) * 100))
   }
   /**
    * Update charge info
    */
-  const updateChargeInfo = () => {
+  const updateCharge = () => {
     charging.value = battery?.charging || false
   }
   /**
    * Update discharging info
    */
-  const updateDischargingInfo = () => {
+  const updateDischarging = () => {
     time.value = battery?.dischargingTime ? battery?.dischargingTime / 60 : 0
     label.value = time.value ? timeConvert(time.value) : ''
   }
   /**
    * Update all battery info
    */
-  const updateAllBatteryInfo = () => {
-    updateChargeInfo()
-    updateLevelInfo()
-    updateDischargingInfo()
+  const updateBatteryInfo = () => {
+    updateCharge()
+    updateLevel()
+    updateDischarging()
   }
 
   onMounted(async () => {
@@ -76,10 +76,10 @@ export function useBattery () {
       // @ts-ignore
       battery = await navigator.getBattery()
       if (battery) {
-        updateAllBatteryInfo()
-        battery.addEventListener('chargingchange', updateAllBatteryInfo)
-        battery.addEventListener('levelchange', updateAllBatteryInfo)
-        battery.addEventListener('dischargingtimechange', updateAllBatteryInfo)
+        updateBatteryInfo()
+        battery.addEventListener('chargingchange', updateBatteryInfo)
+        battery.addEventListener('levelchange', updateBatteryInfo)
+        battery.addEventListener('dischargingtimechange', updateBatteryInfo)
       }
     } catch (e) {
       // eslint-disable-next-line no-console
@@ -89,9 +89,9 @@ export function useBattery () {
   onUnmounted(() => {
     try {
       if (battery) {
-        battery.removeEventListener('chargingchange', updateAllBatteryInfo)
-        battery.removeEventListener('levelchange', updateAllBatteryInfo)
-        battery.removeEventListener('dischargingtimechange', updateAllBatteryInfo)
+        battery.removeEventListener('chargingchange', updateBatteryInfo)
+        battery.removeEventListener('levelchange', updateBatteryInfo)
+        battery.removeEventListener('dischargingtimechange', updateBatteryInfo)
       }
     } catch (e) {
       // eslint-disable-next-line no-console
