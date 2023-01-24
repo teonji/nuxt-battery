@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Standard Version
-        uses: qzb/standard-version-action@v1.0.5
+        uses: qzb/standard-version-action@v1.0.7
