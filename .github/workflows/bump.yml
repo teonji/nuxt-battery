@@ -14,5 +14,16 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
 
-      - name: Standard Version
+      - if: steps.changes.outputs.src == 'true'
+        name: Standard Version
         uses: qzb/standard-version-action@v1.0.7
+        run: |
+          git config --global user.name "${{ secrets.USER_NAME }}"
+          git config --global user.email "${{ secrets.USER_EMAIL }}"
+          git push --follow-tags origin main
+
+      - if: steps.changes.outputs.src == 'true'
+        name: Npm Publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
