@@ -15,15 +15,15 @@ jobs:
           git config user.email "<>"
 
       - name: Bump version
-        if: steps.changes.outputs.src == 'true'
         uses: qzb/standard-version-action@v1.0.7
 
-      - if: steps.changes.outputs.src == 'true'
+      - name: Push on repo
         run: |
           git config --global user.name "${{ secrets.USER_NAME }}"
           git config --global user.email "${{ secrets.USER_EMAIL }}"
-          git push --follow-tags origin master
-      - if: steps.changes.outputs.src == 'true'
+          git push --follow-tags origin main
+
+      - name: Publish version
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
