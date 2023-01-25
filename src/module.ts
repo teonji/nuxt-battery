@@ -4,7 +4,6 @@ import { defineNuxtModule, addPlugin, addImportsDir, createResolver } from '@nux
 export interface ModuleOptions {
   addPlugin: boolean
 }
-
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-battery',
