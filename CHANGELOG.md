@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.5 (2023-01-25)
+
+
+### Bug Fixes
+
+* bump action config ([c75386a](https://github.com/teonji/nuxt-battery/commit/c75386a867bc3a43afb960cfe609344841c9ad5f))
+
 ### 1.1.4 (2023-01-24)
 
 
