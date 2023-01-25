@@ -17,7 +17,7 @@ jobs:
       - name: Bump version
         uses: qzb/standard-version-action@v1.0.7
 
-      - name: Push on repo
+      - name: Push bump
         run: |
           git config --global user.name "${{ secrets.USER_NAME }}"
           git config --global user.email "${{ secrets.USER_EMAIL }}"
