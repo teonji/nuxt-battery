@@ -20,11 +20,12 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "prepack": "nuxt-module-build",
+    "prepack": "yarn install && nuxi prepare playground && nuxt-module-build",
     "release": "standard-version",
-    "dev": "nuxi dev playground",
+    "dev": "yarn install && nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "build": "nuxi build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
