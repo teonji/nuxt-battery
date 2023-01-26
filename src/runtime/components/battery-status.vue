@@ -13,22 +13,22 @@ export interface Props {
 const props = withDefaults(defineProps<Props>(), {
   /**
    * If you need the remaining time label close to the battery icon
-   * @type {boolean}
+   * @type boolean
    */
   showLabel: false,
   /**
    * If you need to show percentage in battery icon (and label)
-   * @type {boolean}
+   * @type boolean
    */
   showPercentage: false,
   /**
    * Default battery icn border is white, choose dark if you need black
-   * @type {boolean}
+   * @type boolean
    */
   dark: false,
   /**
    * If you need to show green, yellow and red color in battery icon
-   * @type {boolean}
+   * @type boolean
    */
   colored: true
 })
