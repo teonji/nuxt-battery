@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.8 (2023-01-26)
+
+
+### Bug Fixes
+
+* add docs in stories ([9aac9ce](https://github.com/teonji/nuxt-battery/commit/9aac9ceef3ff42f8eb26feb999057a17623ef54c))
+
 ### 1.1.7 (2023-01-26)
 
 ### 1.1.6 (2023-01-25)
