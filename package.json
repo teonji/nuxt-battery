@@ -25,8 +25,7 @@
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "build": "nuxi build",
-    "storybook": "start-storybook -p 6006",
-    "storybook:changelog": "node .storybook/replace.ts",
+    "storybook": "yarn start-storybook -p 6006",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -39,6 +38,7 @@
     "@nuxt/schema": "^3.0.0",
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/vue3": "^6.3.12",
     "commitlint": "^17.4.2",
