@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.6 (2023-01-25)
+
+
+### Bug Fixes
+
+* add npm publish action ([3eb0ab7](https://github.com/teonji/nuxt-battery/commit/3eb0ab76fef477687700a54f58f233772670d654))
+
 ### 1.1.5 (2023-01-25)
 
 
