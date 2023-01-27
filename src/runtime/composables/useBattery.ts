@@ -9,17 +9,6 @@ interface BatteryManager {
   removeEventListener: Function,
 }
 
-export interface useBatteryType {
-  status: number
-  charging: boolean | null
-  time: number
-  label: string
-}
-/**
- * useBattery composable
- *
- * @returns useBatteryType
- */
 export function useBattery () {
   let battery: BatteryManager | null = null
 
@@ -30,14 +19,12 @@ export function useBattery () {
 
   /**
    * Convert minutes in a formatted string with hour and minutes
-   * @param {number} val
-   * @returns {string}
    */
-  const timeConvert = (val: number) => {
-    const hours: number = val / 60
-    const rHours: number = Math.floor(hours)
-    const minutes: number = (hours - rHours) * 60
-    const rMinutes: number = Math.round(minutes)
+  const timeConvert = (val: number): string => {
+    const hours = val / 60
+    const rHours = Math.floor(hours)
+    const minutes = (hours - rHours) * 60
+    const rMinutes = Math.round(minutes)
     const sHours = `${rHours > 0 ? `${rHours} hour${rHours > 1 ? 's' : ''}` : ''}`
     const sMinutes = `${rMinutes > 0 ? `${rMinutes} minute${rMinutes > 1 ? 's' : ''}` : ''}`
     return `${sHours} ${sMinutes}`.trim()
@@ -46,26 +33,26 @@ export function useBattery () {
   /**
    * Update level info battery
    */
-  const updateLevel = () => {
+  const updateLevel = (): void => {
     status.value = parseInt(String((battery?.level || 0) * 100))
   }
   /**
    * Update charge info
    */
-  const updateCharge = () => {
+  const updateCharge = (): void => {
     charging.value = battery?.charging || false
   }
   /**
    * Update discharging info
    */
-  const updateDischarging = () => {
+  const updateDischarging = (): void => {
     time.value = battery?.dischargingTime ? battery?.dischargingTime / 60 : 0
     label.value = time.value ? timeConvert(time.value) : ''
   }
   /**
    * Update all battery info
    */
-  const updateBatteryInfo = () => {
+  const updateBatteryInfo = (): void => {
     updateCharge()
     updateLevel()
     updateDischarging()
