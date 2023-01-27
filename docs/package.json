@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "cd .. && yarn install && yarn run storybook:build && cd docs && nuxi build",
-    "storybook:build": "build-storybook -o ./docs/.output/public/storybook",
+    "build": "cd .. && yarn install && build-storybook -o ./docs/.output/public/storybook && cd docs && nuxi build",
     "generate": "nuxi generate",
     "preview": "nuxi preview"
   },
