@@ -4,13 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "nuxi build && cd .. && build-storybook -o ./docs/.output/public/storybook",
+    "build": "cd .. && yarn install && cd docs && nuxi build && cd .. && yarn prepare:playground && build-storybook -o ./docs/.output/public/storybook",
     "generate": "nuxi generate",
     "preview": "nuxi preview"
   },
   "devDependencies": {
-    "nuxt": "^3.0.0",
     "@nuxt-themes/docus": "^1.4.7",
-    "@storybook/addon-essentials": "^6.3.12"
+    "nuxt": "^3.0.0"
   }
 }
