@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "cd .. && yarn install && cd docs && nuxi build",
+    "build": "cd .. && yarn install && cd docs && nuxi build && storybook",
     "generate": "nuxi generate",
-    "preview": "nuxi preview"
+    "preview": "nuxi preview",
+    "storybook": "cd .. && build-storybook -o ./docs/.output/public/storybook"
   },
   "devDependencies": {
     "nuxt": "^3.0.0",
