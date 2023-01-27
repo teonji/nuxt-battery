@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "cd .. && yarn install && build-storybook -o ./docs/.output/public/storybook && cd docs && nuxi build",
+    "build": "cd .. && yarn install && SET NODE_OPTIONS=--openssl-legacy-provider && build-storybook -o ./docs/.output/public/storybook && cd docs && nuxi build",
     "generate": "nuxi generate",
     "preview": "nuxi preview"
   },
