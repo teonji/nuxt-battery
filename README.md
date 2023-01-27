@@ -7,6 +7,7 @@ A simple Nuxt 3 module to show info about your battery device.
 [![License][license-src]][license-href]
 
 [![nuxt-battery](https://nuxt-battery.vercel.app/preview.png)](https://nuxt-battery.vercel.app)
+[![nuxt-battery](https://nuxt-battery.vercel.app/browser-compability.png)](https://nuxt-battery.vercel.app)
 
 - [📖 &nbsp;Read the documentation](https://nuxt-battery.vercel.app)
 - [💥 &nbsp;Try the demo](https://nuxt-battery.vercel.app/demo)
