@@ -1,6 +1,6 @@
 name: Bump version
 on:
-  pull_request:
+  push:
     branches:
       - main
 
@@ -8,9 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
       - name: Configure committer
         run: |
           git config user.name "GitHub Actions Bot"
