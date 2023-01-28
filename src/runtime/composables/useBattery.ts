@@ -85,6 +85,7 @@ export function useBattery () {
       console.warn('Can\'t access to navigator.getBattery() API.')
     }
   })
+
   return {
     status,
     charging,
