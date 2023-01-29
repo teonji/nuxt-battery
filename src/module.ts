@@ -1,11 +1,5 @@
 import { fileURLToPath } from 'url'
 import { defineNuxtModule, addPlugin, addImportsDir, createResolver } from '@nuxt/kit'
-export interface useBattery {
-  status: number
-  charging: boolean | null
-  time: number
-  label: string
-}
 export interface ModuleOptions {
   addPlugin: boolean
 }
