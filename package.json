@@ -17,6 +17,14 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "nuxt",
+    "nuxt-module",
+    "nuxt3",
+    "typescript",
+    "composables",
+    "battery"
+  ],
   "scripts": {
     "prepare": "husky install",
     "prepare:playground": "nuxi prepare playground",
