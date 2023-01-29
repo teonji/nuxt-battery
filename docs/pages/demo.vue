@@ -7,31 +7,6 @@ const { status, charging, label, time } = useBattery()
   <div class="container">
     <div class="battery-container">
       <div class="battery-status">
-        <div class="docs-prev-next">
-          <nuxt-link href="/" class="prev">
-            <span class="directory" />
-            <span class="title-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                class="icon"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m11 17l-5-5m0 0l5-5m-5 5h12"
-                />
-              </svg>
-              <span class="title">Back to docs</span>
-            </span>
-          </nuxt-link>
-        </div>
         <p>
           Status: {{ status }}%
         </p>
@@ -74,16 +49,6 @@ const { status, charging, label, time } = useBattery()
   </div>
 </template>
 <style>
-.docs-prev-next {
-  padding-bottom: 20px;
-}
-.docs-prev-next a {
-  border: 1px solid var(--elements-border-primary-default);
-  border-radius: var(--radii-lg);
-  min-width: 0;
-  padding: var(--space-3);
-  position: relative;
-}
 .battery-container {
   margin: auto;
 }
