@@ -74,15 +74,10 @@ export function useBattery () {
     }
   })
   onUnmounted(() => {
-    try {
-      if (battery) {
-        battery.removeEventListener('chargingchange', updateBatteryInfo)
-        battery.removeEventListener('levelchange', updateBatteryInfo)
-        battery.removeEventListener('dischargingtimechange', updateBatteryInfo)
-      }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.warn('Can\'t access to navigator.getBattery() API.')
+    if (battery) {
+      battery.removeEventListener('chargingchange', updateBatteryInfo)
+      battery.removeEventListener('levelchange', updateBatteryInfo)
+      battery.removeEventListener('dischargingtimechange', updateBatteryInfo)
     }
   })
 
