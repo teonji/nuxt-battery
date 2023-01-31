@@ -55,4 +55,4 @@ Temporary Items
 .apdisk
 
 # Project
-src/runtime/components/index.js
+src/runtime/components/index.ts
