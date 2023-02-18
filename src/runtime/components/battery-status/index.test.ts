@@ -1,10 +1,10 @@
 import { ref } from 'vue'
 import { mount, shallowMount } from '@vue/test-utils'
 import { expect, test, describe } from '@jest/globals'
-import batteryStatus from './battery-status.vue'
+import batteryStatus from './index.vue'
 
 jest.clearAllMocks()
-jest.mock('../composables/useBattery', () => ({
+jest.mock('../../composables/useBattery', () => ({
   useBattery: jest.fn(() => ({
     status: ref<number>(22),
     charging: ref<boolean | null>(true),
