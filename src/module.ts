@@ -8,7 +8,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-battery',
     configKey: 'nuxtBattery'
   },
-  setup (options, nuxt) {
+  setup (_options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
