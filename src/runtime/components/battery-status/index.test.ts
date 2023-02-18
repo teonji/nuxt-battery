@@ -33,20 +33,4 @@ describe('battery-status', () => {
     const styles = window.getComputedStyle(batteryLevel.element)
     expect(styles.getPropertyValue('height')).toEqual('22%')
   })
-
-  // test('has battery status height set properly', () => {
-  //   const wrapper = shallowMount(batteryStatus)
-  // })
-
-  // test('has battery status color set properly', () => {
-  //   const wrapper = shallowMount(batteryStatus)
-  //   const batteryLevel = wrapper.find('.battery-level')
-  // })
-
-  // test('has battery status style set properly', () => {
-  //   const wrapper = shallowMount(batteryStatus)
-  //   const batteryLevel = wrapper.find('.battery-level')
-  //   const styles = window.getComputedStyle(batteryLevel.element)
-  //   expect(styles.getPropertyValue('height')).toEqual('22%')
-  // })
 })
