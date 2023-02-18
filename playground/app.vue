@@ -39,6 +39,34 @@
         <battery-status dark :colored="false" show-percentage show-label />
       </div>
     </div>
+    <div class="batteries">
+      <div>
+        <h2>
+          Default mode
+        </h2>
+        <battery-status-circle />
+        <battery-status-circle show-percentage />
+        <battery-status-circle show-label />
+        <battery-status-circle show-percentage show-label />
+        <battery-status-circle :colored="false" />
+        <battery-status-circle :colored="false" show-percentage />
+        <battery-status-circle :colored="false" show-label />
+        <battery-status-circle :colored="false" show-percentage show-label />
+      </div>
+      <div style="background-color: black">
+        <h2 style="color: white">
+          Dark mode
+        </h2>
+        <battery-status-circle dark />
+        <battery-status-circle dark show-percentage />
+        <battery-status-circle dark show-label />
+        <battery-status-circle dark show-percentage show-label />
+        <battery-status-circle dark :colored="false" />
+        <battery-status-circle dark :colored="false" show-percentage />
+        <battery-status-circle dark :colored="false" show-label />
+        <battery-status-circle dark :colored="false" show-percentage show-label />
+      </div>
+    </div>
   </div>
 </template>
 
