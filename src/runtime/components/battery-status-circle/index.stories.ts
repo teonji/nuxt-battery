@@ -1,8 +1,8 @@
 import { Meta, Story } from '@storybook/vue3'
-import batteryStatus from './battery-status.vue'
+import batteryStatusCircle from './index.vue'
 export default {
-  title: 'Components/batteryStatus',
-  component: batteryStatus,
+  title: 'Components/batteryStatusCircle',
+  component: batteryStatusCircle,
   argTypes: {
     showLabel: {
       control: 'boolean',
@@ -23,16 +23,16 @@ export default {
   }
 } as Meta
 
-const Template: Story = (args, { argTypes }) => ({
+const Template: Story = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { batteryStatus },
-  template: '<battery-status v-bind="$props" />'
+  components: { batteryStatusCircle },
+  template: '<battery-status-circle v-bind="$props" />'
 })
 
-const TemplateDark: Story = (args, { argTypes }) => ({
+const TemplateDark: Story = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { batteryStatus },
-  template: '<div style="padding: 50px; background-color: black"><battery-status v-bind="$props" /></div>'
+  components: { batteryStatusCircle },
+  template: '<div style="padding: 50px; background-color: black"><battery-status-circle v-bind="$props" /></div>'
 })
 
 export const Default = Template.bind({})

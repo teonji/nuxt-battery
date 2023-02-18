@@ -6,32 +6,8 @@ const { status, charging, label, time } = useBattery()
 <template>
   <div class="container">
     <div class="battery-container">
-      <div class="battery-status">
-        <div class="docs-prev-next">
-          <nuxt-link href="/" class="prev">
-            <span class="directory" />
-            <span class="title-wrapper">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                class="icon"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m11 17l-5-5m0 0l5-5m-5 5h12"
-                />
-              </svg>
-              <span class="title">Back to docs</span>
-            </span>
-          </nuxt-link>
-        </div>
+      <div class="battery-status-text">
+        <h2>Composable</h2>
         <p>
           Status: {{ status }}%
         </p>
@@ -45,7 +21,7 @@ const { status, charging, label, time } = useBattery()
       <div class="batteries">
         <div style="background-color: white">
           <h2 style="color: black">
-            Default mode
+            Default mode {{ '<battery-status />' }}
           </h2>
           <battery-status />
           <battery-status show-percentage />
@@ -58,7 +34,7 @@ const { status, charging, label, time } = useBattery()
         </div>
         <div>
           <h2>
-            Dark mode
+            Dark mode {{ '<battery-status />' }}
           </h2>
           <battery-status dark />
           <battery-status dark show-percentage />
@@ -70,24 +46,42 @@ const { status, charging, label, time } = useBattery()
           <battery-status dark :colored="false" show-percentage show-label />
         </div>
       </div>
+      <div class="batteries">
+        <div style="background-color: white">
+          <h2 style="color: black">
+            Default mode {{ '<battery-status-circle />' }}
+          </h2>
+          <battery-status-circle />
+          <battery-status-circle show-percentage />
+          <battery-status-circle show-label />
+          <battery-status-circle show-percentage show-label />
+          <battery-status-circle :colored="false" />
+          <battery-status-circle :colored="false" show-percentage />
+          <battery-status-circle :colored="false" show-label />
+          <battery-status-circle :colored="false" show-percentage show-label />
+        </div>
+        <div>
+          <h2>
+            Dark mode {{ '<battery-status-circle />' }}
+          </h2>
+          <battery-status-circle dark />
+          <battery-status-circle dark show-percentage />
+          <battery-status-circle dark show-label />
+          <battery-status-circle dark show-percentage show-label />
+          <battery-status-circle dark :colored="false" />
+          <battery-status-circle dark :colored="false" show-percentage />
+          <battery-status-circle dark :colored="false" show-label />
+          <battery-status-circle dark :colored="false" show-percentage show-label />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <style>
-.docs-prev-next {
-  padding-bottom: 20px;
-}
-.docs-prev-next a {
-  border: 1px solid var(--elements-border-primary-default);
-  border-radius: var(--radii-lg);
-  min-width: 0;
-  padding: var(--space-3);
-  position: relative;
-}
 .battery-container {
   margin: auto;
 }
-.battery-status {
+.battery-status-text {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -97,7 +91,7 @@ const { status, charging, label, time } = useBattery()
   width: 50%;
   margin: auto;
 }
-.batteries > div > h2 {
+h2 {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;

@@ -56,7 +56,7 @@ const {
 </script>
 ```
 
-## `<nuxt-battery />`
+## `<nuxt-battery />` or `<nuxt-battery-circle />`
 
 If you don't need to develop your own custom component, you can simply use this one to have a status battery.
 
@@ -65,6 +65,7 @@ If you don't need to develop your own custom component, you can simply use this 
 <template>
   <div>
     <nuxt-battery />
+    <nuxt-battery-circle />
   </div>
 </template>
 ```
@@ -72,6 +73,12 @@ If you don't need to develop your own custom component, you can simply use this 
 <template>
   <div>
     <nuxt-battery
+      :show-label
+      :show-percentage
+      :dark
+      :colored
+    />
+    <nuxt-battery-circle
       :show-label
       :show-percentage
       :dark
