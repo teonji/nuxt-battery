@@ -1,5 +1,7 @@
 import { defineNuxtPlugin } from '#app'
-import batteryStatus from './components/battery-status.vue'
+import components from './components'
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.component('battery-status', batteryStatus)
+  Object.keys(components).forEach((key: string) =>
+    nuxtApp.vueApp.component(key, components[key])
+  )
 })

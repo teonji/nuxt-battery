@@ -11,6 +11,9 @@ for (const component of (folders || [])) {
   toImport += `import ${name} from './${component}/index.vue'\n`
   names.push(name)
 }
-toImport += `\nexport default {\n  ${names.join(',\n  ')}\n}`
+toImport += `\ninterface components {
+  [key: string]: Object
+}\n`
+toImport += `\nexport default {\n  ${names.join(',\n  ')}\n} as components`
 
 fs.writeFileSync('./src/runtime/components/index.ts', toImport.trim() + '\n')
