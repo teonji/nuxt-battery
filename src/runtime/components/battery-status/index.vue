@@ -1,71 +1,13 @@
 <script lang="ts">
-import { computed } from 'vue'
-import { useBattery } from '../composables/useBattery'
+import props, { Props } from '../../utils/props'
+import { useBattery } from '../../composables/useBattery'
+import { useBatteryComponent } from '../../composables/useBatteryComponent'
 
-export interface Props {
-  showLabel?: boolean
-  showPercentage?: boolean
-  dark?: boolean
-  colored?: boolean
-}
 export default {
-  props: {
-  /**
-   * If you need the remaining time label close to the battery icon
-   * @type boolean
-   */
-    showLabel: {
-      type: Boolean,
-      default: false
-    },
-    /**
-   * If you need to show percentage in battery icon (and label)
-   * @type boolean
-   */
-    showPercentage: {
-      type: Boolean,
-      default: false
-    },
-    /**
-   * Default battery icn border is white, choose dark if you need black
-   * @type boolean
-   */
-    dark: {
-      type: Boolean,
-      default: false
-    },
-    /**
-   * If you need to show green, yellow and red color in battery icon
-   * @type boolean
-   */
-    colored: {
-      type: Boolean,
-      default: true
-    }
-  },
+  props,
   setup (props: Props) {
     const { status, charging, label } = useBattery()
-
-    const color = computed<string>(() => props.dark ? 'white' : 'black')
-
-    const style = computed<string>(() => {
-      const dark = props.dark ? 'dark' : ''
-      let color = ''
-      if (status.value > 0) {
-        if (props.colored) {
-          switch (true) {
-            case status.value <= 10:
-              color = 'alert'
-              break
-            case status.value <= 25:
-              color = 'warn'
-              break
-          }
-        }
-      }
-      return `${dark} ${color}`.trim()
-    })
-
+    const { color, style } = useBatteryComponent(props, status.value)
     return {
       status,
       charging,
