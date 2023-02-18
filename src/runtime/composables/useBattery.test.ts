@@ -1,16 +1,5 @@
-import { ref } from 'vue'
 import { describe, expect, test } from '@jest/globals'
 import { useBattery } from './useBattery'
-
-jest.clearAllMocks()
-jest.mock('./useBattery', () => ({
-  useBattery: jest.fn(() => ({
-    status: ref<number>(22),
-    charging: ref<boolean | null>(true),
-    time: ref<number>(60),
-    label: ref<string>('1 hour')
-  }))
-}))
 
 describe('battery-status', () => {
   test('useBattery return right types.', () => {
@@ -21,11 +10,22 @@ describe('battery-status', () => {
     expect(typeof label.value).toBe('string')
   })
 
-  test('useBattery check value.', () => {
+  test('useBattery can change value', () => {
     const { status, charging, time, label } = useBattery()
-    expect(status.value).toBe(22)
-    expect(charging.value).toBe(true)
-    expect(time.value).toBe(60)
-    expect(label.value).toBe('1 hour')
+
+    const statusValue = 22
+    const chargingValue = true
+    const timeValue = 60
+    const labelValue = '1 hour'
+
+    status.value = statusValue
+    charging.value = chargingValue
+    time.value = timeValue
+    label.value = labelValue
+
+    expect(status.value).toBe(statusValue)
+    expect(charging.value).toBe(chargingValue)
+    expect(time.value).toBe(timeValue)
+    expect(label.value).toBe(labelValue)
   })
 })
