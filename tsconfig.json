@@ -2,6 +2,7 @@
   "extends": "./playground/.nuxt/tsconfig.json",
   "compilerOptions": {
     "types": [
+      "node",
       "@types/jest",
       "@vue/test-utils"
     ]
