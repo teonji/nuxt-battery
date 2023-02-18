@@ -15,6 +15,7 @@ const config: Config = {
     '<rootDir>/src/runtime/**/*.ts',
     '<rootDir>/src/runtime/**/*.vue',
     '!<rootDir>/src/runtime/plugin.ts',
+    '!<rootDir>/src/runtime/components/index.ts',
     '!<rootDir>/src/runtime/**/*.stories.ts'
   ]
 }
